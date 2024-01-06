@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var credential = sdk.NewCredential("xwjd", "XWJD010230441222212312313V")
+var credential = sdk.NewCredential("xwjd", "XXX")
 
 func TestSecurityCaptcha(t *testing.T) {
 	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
