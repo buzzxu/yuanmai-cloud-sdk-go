@@ -5,12 +5,12 @@ import (
 	"testing"
 )
 
-var credential = sdk.NewCredential("xwjd", "XXX")
+var credential = sdk.NewCredential("xwjd", "XXXX")
 
 func TestSecurityCaptcha(t *testing.T) {
 	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
 	client.WithCredential(credential)
-	securityApi := &OpenSecurityApi{client: client, Service: "security"}
+	securityApi := NewOpenSecurityApi(client)
 	// 图形验证码
 	captchaRequest := &CaptchaRequest{
 		Key: "",
@@ -25,7 +25,7 @@ func TestSecurityCaptcha(t *testing.T) {
 func TestOpenSecurityApi_Login(t *testing.T) {
 	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
 	client.WithCredential(credential)
-	securityApi := &OpenSecurityApi{client: client, Service: "security"}
+	securityApi := NewOpenSecurityApi(client)
 	// 图形验证码
 	loginRequest := &LoginRequest{
 		UserName: "15666666660",

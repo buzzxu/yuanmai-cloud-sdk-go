@@ -15,8 +15,7 @@ type (
 	}
 
 	OpenSecurityApi struct {
-		client  *sdk.Client
-		Service string
+		BaseOpenApi
 	}
 
 	// CaptchaRequest 图形验证码
@@ -46,9 +45,19 @@ type (
 	}
 )
 
+// NewOpenSecurityApi 实例化OpenSecurityApi
+func NewOpenSecurityApi(client *sdk.Client) *OpenSecurityApi {
+	return &OpenSecurityApi{
+		BaseOpenApi: BaseOpenApi{
+			client:  client,
+			service: "security",
+		},
+	}
+}
+
 func (t *OpenSecurityApi) Captcha(request *CaptchaRequest) (*CaptchaResponse, error) {
 	response := &sdk.BaseResponse[CaptchaResponse]{}
-	err := t.client.Send(t.Service, "captcha", request, response)
+	err := t.client.Send(t.service, "captcha", request, response)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +66,7 @@ func (t *OpenSecurityApi) Captcha(request *CaptchaRequest) (*CaptchaResponse, er
 
 func (t *OpenSecurityApi) Login(request *LoginRequest) (map[string]interface{}, error) {
 	response := &sdk.BaseResponse[map[string]interface{}]{}
-	err := t.client.Send(t.Service, "login", request, response)
+	err := t.client.Send(t.service, "login", request, response)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +75,7 @@ func (t *OpenSecurityApi) Login(request *LoginRequest) (map[string]interface{}, 
 
 func (t *OpenSecurityApi) Logout(request *LogoutRequest) (bool, error) {
 	response := &sdk.BaseResponse[bool]{}
-	err := t.client.Send(t.Service, "logout", request, response)
+	err := t.client.Send(t.service, "logout", request, response)
 	if err != nil {
 		return false, err
 	}

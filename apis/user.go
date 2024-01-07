@@ -11,8 +11,7 @@ type (
 	}
 
 	OpenUserApi struct {
-		client  *sdk.Client
-		Service string
+		BaseOpenApi
 	}
 
 	GetUserInfoRequest struct {
@@ -26,10 +25,20 @@ type (
 	}
 )
 
+// NewOpenUserApi 实例化OpenUserApi
+func NewOpenUserApi(client *sdk.Client) *OpenUserApi {
+	return &OpenUserApi{
+		BaseOpenApi{
+			client:  client,
+			service: "user",
+		},
+	}
+}
+
 // Info 用户信息
 func (t *OpenUserApi) Info(request *GetUserInfoRequest) (map[string]interface{}, error) {
 	response := &sdk.BaseResponse[map[string]interface{}]{}
-	err := t.client.Send(t.Service, "info", request, response)
+	err := t.client.Send(t.service, "info", request, response)
 	if err != nil {
 		return nil, err
 	}
@@ -39,7 +48,7 @@ func (t *OpenUserApi) Info(request *GetUserInfoRequest) (map[string]interface{},
 // FindRoleMenu 查询角色菜单
 func (t *OpenUserApi) FindRoleMenu(request *FindRoleMenuRequest) ([]map[string]interface{}, error) {
 	response := &sdk.BaseResponse[[]map[string]interface{}]{}
-	err := t.client.Send(t.Service, "findRoleMenu", request, response)
+	err := t.client.Send(t.service, "findRoleMenu", request, response)
 	if err != nil {
 		return nil, err
 	}

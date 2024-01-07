@@ -8,7 +8,7 @@ import (
 func TestOpenUserApi_Info(t *testing.T) {
 	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
 	client.WithCredential(credential)
-	securityApi := &OpenUserApi{client: client, Service: "user"}
+	securityApi := NewOpenUserApi(client)
 	getUserInfoRequest := &GetUserInfoRequest{
 
 		UserId: 247,
@@ -23,7 +23,7 @@ func TestOpenUserApi_Info(t *testing.T) {
 func TestOpenUserApi_FindRoleMenu(t *testing.T) {
 	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
 	client.WithCredential(credential)
-	securityApi := &OpenUserApi{client: client, Service: "user"}
+	securityApi := NewOpenUserApi(client)
 	findRoleMenuRequest := &FindRoleMenuRequest{
 
 		RoleId: 42,
