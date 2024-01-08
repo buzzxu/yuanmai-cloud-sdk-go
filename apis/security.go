@@ -10,6 +10,8 @@ type (
 		Captcha(request *CaptchaRequest) (*CaptchaResponse, error)
 		// Login 登录
 		Login(request *LoginRequest) (map[string]interface{}, error)
+		// Authorize 授权
+		Authorize(request *AuthorizeTokenRequest) (*AuthorizeUserResponse, error)
 		// Logout 登出
 		Logout(request *LogoutRequest) (bool, error)
 	}
@@ -43,6 +45,16 @@ type (
 		Key    string `json:"key"`
 		Base64 string `json:"base64"`
 	}
+
+	AuthorizeTokenRequest struct {
+		UserId int64  `json:"userId,omitempty"`
+		Type   int32  `json:"type"`
+		Token  string `json:"token"`
+	}
+
+	AuthorizeUserResponse struct {
+		User map[string]interface{} `json:"user"`
+	}
 )
 
 // NewOpenSecurityApi 实例化OpenSecurityApi
@@ -71,6 +83,15 @@ func (t *OpenSecurityApi) Login(request *LoginRequest) (map[string]interface{}, 
 		return nil, err
 	}
 	return response.Data, err
+}
+
+func (t *OpenSecurityApi) Authorize(request *AuthorizeTokenRequest) (*AuthorizeUserResponse, error) {
+	response := &sdk.BaseResponse[AuthorizeUserResponse]{}
+	err := t.client.Send(t.service, "authorize", request, response)
+	if err != nil {
+		return nil, err
+	}
+	return &response.Data, err
 }
 
 func (t *OpenSecurityApi) Logout(request *LogoutRequest) (bool, error) {

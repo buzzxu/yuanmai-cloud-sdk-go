@@ -5,7 +5,7 @@ import "github.com/buzzxu/yuanmai-cloud-sdk-go/sdk"
 type (
 	UserApi interface {
 		// Info 用户信息
-		Info() (map[string]interface{}, error)
+		Info(request *GetUserInfoRequest) (map[string]interface{}, error)
 		// FindRoleMenu 查询角色菜单
 		FindRoleMenu(request *FindRoleMenuRequest) ([]map[string]interface{}, error)
 	}
