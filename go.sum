@@ -1,7 +1,11 @@
 github.com/buzzxu/boys v0.3.7 h1:wX1V2afMvTSojDhxv8nXSBLW/HUS8RuQ7wjQlEBz9hA=
 github.com/buzzxu/boys v0.3.7/go.mod h1:upcb2Y3kL7YAe2Y+bBPizK5L/DwVWmjoqDSLZNJOs+c=
+github.com/buzzxu/boys v0.3.8/go.mod h1:V7npCQHn00m1FT1NCJOlba6fw5p4YzCy3EliA9aqHns=
+github.com/buzzxu/boys v0.3.9 h1:Mbn1FbmiuLY3F0lH6ZfBQeMYj3zFs2KmorVoXAeUwHw=
+github.com/buzzxu/boys v0.3.9/go.mod h1:V7npCQHn00m1FT1NCJOlba6fw5p4YzCy3EliA9aqHns=
 github.com/buzzxu/go-openapi v0.0.2 h1:HDCVcVqHh4MMK53DV3De66MtUaSvzbHLXTKG3xITirY=
 github.com/buzzxu/go-openapi v0.0.2/go.mod h1:k5/nUTOXssclnlrlvakQ2Cto0K+X6ZRKP/Pa3JuYzOU=
+github.com/buzzxu/go-openapi v0.0.3/go.mod h1:k5/nUTOXssclnlrlvakQ2Cto0K+X6ZRKP/Pa3JuYzOU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

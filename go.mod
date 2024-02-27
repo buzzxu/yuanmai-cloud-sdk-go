@@ -3,8 +3,8 @@ module github.com/buzzxu/yuanmai-cloud-sdk-go
 go 1.22
 
 require (
-	github.com/buzzxu/boys v0.3.7
-	github.com/buzzxu/go-openapi v0.0.2
+	github.com/buzzxu/boys v0.3.9
+	github.com/buzzxu/go-openapi v0.0.3
 )
 
 require (
