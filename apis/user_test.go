@@ -6,7 +6,7 @@ import (
 )
 
 func TestOpenUserApi_Info(t *testing.T) {
-	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
+	client := sdk.NewDefaultClient("xwjd-mgr.xingchenga.xyz")
 	client.WithCredential(credential)
 	securityApi := NewOpenUserApi(client)
 	getUserInfoRequest := &GetUserInfoRequest{

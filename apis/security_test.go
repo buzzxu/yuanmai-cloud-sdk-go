@@ -8,7 +8,7 @@ import (
 var credential = sdk.NewCredential("xwjd", "XWJD010230441222212312313V")
 
 func TestSecurityCaptcha(t *testing.T) {
-	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
+	client := sdk.NewDefaultClient("xwjd-mgr.xingchenga.xyz/api")
 	client.WithCredential(credential)
 	securityApi := NewOpenSecurityApi(client)
 	// 图形验证码
@@ -23,7 +23,7 @@ func TestSecurityCaptcha(t *testing.T) {
 }
 
 func TestOpenSecurityApi_Login(t *testing.T) {
-	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
+	client := sdk.NewDefaultClient("xwjd-mgr.xingchenga.xyz/api")
 	client.WithCredential(credential)
 	securityApi := NewOpenSecurityApi(client)
 	// 图形验证码
@@ -42,7 +42,7 @@ func TestOpenSecurityApi_Login(t *testing.T) {
 }
 
 func TestOpenSecurityApi_Authorize(t *testing.T) {
-	client := sdk.NewDefaultClient("api.mgr.xwjd.xingchenga.xyz")
+	client := sdk.NewDefaultClient("xwjd-mgr.xingchenga.xyz/api")
 	client.WithCredential(credential)
 	securityApi := NewOpenSecurityApi(client)
 	authorizeTokenRequest := &AuthorizeTokenRequest{
