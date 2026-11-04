@@ -1,8 +1,6 @@
 module github.com/buzzxu/yuanmai-cloud-sdk-go
 
-go 1.24.0
-
-toolchain go1.24.2
+go 1.27.3
 
 require (
 	github.com/buzzxu/boys v0.3.13
